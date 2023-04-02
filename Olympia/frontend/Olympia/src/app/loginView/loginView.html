@@ -1,0 +1,11 @@
+<div>
+    
+    <label>Nutzername:</label>
+    <input #username id="username" type="text" (value)="username">
+    <pre></pre>
+    <label>Passwort:</label>
+    <input #password id="password" type="password" (value)="password">
+    <pre></pre>
+    <button type="button" (click)="onLoginButtonClicked()" [innerText]="'Einloggen'"></button>
+    <button type="button" (click)="onRegisterButtonClicked()" [innerText]="'Register'"></button>
+</div>

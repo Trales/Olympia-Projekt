@@ -1,0 +1,43 @@
+
+<div class="content">
+    <table *ngIf="!sportTypeSelected">
+        <tr>
+          <th>Sportart</th>
+        </tr>
+
+        <ng-container *ngFor="let item of data">
+            <tr>
+                <td>
+                    <div class="sportTypeColumn" (click)="onSportTypeClicked(item.name)">
+                        <img [src]="item.src"/>{{item.name}}
+                    </div>
+                </td>
+            </tr>
+        </ng-container>
+      </table>
+
+      <ng-container *ngIf="sportTypeSelected">
+        <img id="backButton" src="../assets/back-button.svg" alt="Back-Button" (click)="onBackClicked()"/>
+
+        <div id="selectedSportType">
+            {{selectedSportType}}
+        </div>
+
+        <table>
+            <tr>
+              <th>Name</th>
+              <th>Land</th>
+              <th>Ergebnis</th>
+              <th>Medaille</th>
+            </tr>
+
+            <tr *ngFor="let item of selectedScores">
+                <td>{{item.name}}</td>
+                <td>{{item.country}}</td>
+                <td>{{item.score}}</td>
+                <td>{{item.medal}}</td>
+            </tr>
+
+        </table>
+      </ng-container>
+</div>

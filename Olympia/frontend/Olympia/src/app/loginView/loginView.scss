@@ -1,0 +1,23 @@
+.content {
+    position: absolute;
+    left: 15%;
+    top: 10%;
+    width: 85%;
+    height: 90%;
+    background: #EEE;
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 20px;
+    font-weight: bold;
+}
+
+div {
+    display: flex;
+    flex-direction: column;
+    justify-self: center;
+    white-space: pre-line;
+}
+
+pre{
+    font-size: 0.5vh;
+}

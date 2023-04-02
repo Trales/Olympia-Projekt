@@ -1,0 +1,38 @@
+<login-view
+  *ngIf="showLoginView && !loggedIn"
+  (loggedIn)="onLoggedIn($event)"
+></login-view>
+
+<div class="leftBar">
+  <!-- Olympia Logo -->
+  <img id="logo" src="../assets/olympiaLogo.webp" alt="Olympia-Logo" />
+
+  <filter-view *ngIf="!showLoginView || loggedIn" [filterInputs]="filterInputs" (searchClicked)="onSearch($event)">
+  </filter-view>
+</div>
+
+<ng-container *ngIf="!showLoginView || loggedIn">
+  <div id="header">
+    <div class="navbar" [class.selected]="activeTab === 0" (click)="onNavbarChanged(0)">
+      Sportarten
+    </div>
+    <div class="navbar" [class.selected]="activeTab === 1" (click)="onNavbarChanged(1)">
+      Länderübersicht
+    </div>
+    <div *ngIf="loggedIn" class="navbar" [class.selected]="activeTab === 2" (click)="onNavbarChanged(2)">
+      Admin
+    </div>
+    <div class="dropdown">
+      <img (click)="onDrowdownClicked($event)" class="dropbtn" id="settingsIcon" src="../assets/settings.svg" alt="Einstellungen"/>
+      <div class="dropdown-content" [class.show]="drowDownVisible">
+        <a (click)="onShowLoginViewClicked()">Adminbereich</a>
+      </div>
+    </div> 
+    
+  </div>
+
+  <content-view [data]="contentViewData" *ngIf="activeTab === 0"></content-view>
+  <country-view *ngIf="activeTab === 1"> </country-view>
+  <admin-view *ngIf="activeTab === 2"> </admin-view>
+
+</ng-container>

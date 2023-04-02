@@ -1,0 +1,11 @@
+<div style="width: 15%;">
+
+    <ng-container *ngFor="let filter of filterInputs; index as i">
+        <label>
+            {{filter}}
+            <input type="text" class="filterInput"/>
+          </label>
+    </ng-container>
+
+    <button *ngIf="filterInputs.length" [innerText]="'Suchen'" type="button" (click)="onSearchClicked()"></button>
+</div>

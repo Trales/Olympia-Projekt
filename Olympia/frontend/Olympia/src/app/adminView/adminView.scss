@@ -1,0 +1,21 @@
+.content {
+    position: absolute;
+    left: 15%;
+    top: 10%;
+    width: 85%;
+    height: 90%;
+    background: #EEE;
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 20px;
+    font-weight: bold;
+
+    align-items: center;
+    align-content: center;
+    
+}
+
+label {
+    display: flex;
+    flex-direction: column;
+}

@@ -1,0 +1,60 @@
+.content {
+    position: absolute;
+    left: 15%;
+    top: 10%;
+    width: 85%;
+    height: 87.9%;
+    background: #EEE;
+    display: flex;
+    flex-wrap: wrap;
+    padding-top: 20px;
+    font-weight: bold;
+    overflow-x: auto;
+}
+
+img {
+    width: 300px;
+}
+
+
+td {
+    text-align: center;
+    font-weight: normal;
+    user-select: none;
+}
+
+table {
+    width: 85%;
+    user-select: none;
+    height: fit-content;
+}
+
+.contentData {
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-direction: column;
+    color: #000;
+}
+
+.sportTypeColumn {
+    display: flex;
+    position: relative;
+    left: 35%;
+}
+
+
+#selectedSportType {
+    width: 100%; 
+    text-align: center; 
+    height: 50px;
+}
+
+
+#backButton {
+    position: absolute;
+    height: 30px;
+    width: 30px;
+    margin-left: 5%;
+}

@@ -1,0 +1,55 @@
+<div class="content">
+    <ng-container *ngIf="!countrySelected">
+        <table>
+            <tr>
+              <th>Land</th>
+              <th>Gold</th>
+              <th>Silber</th>
+              <th>Bronze</th>
+            </tr>
+
+            <ng-container *ngFor="let item of scores">
+                <tr [class.selected]="item.country == searchCountry">
+                    <td (click)="onCountryClicked($event)" [class.selected]="item.country == searchCountry">
+                        {{item.country}}
+                    </td>
+                    <td>
+                        {{item.gold}}
+                    </td>
+                    <td>
+                        {{item.silver}}
+                    </td>
+                    <td>
+                        {{item.bronze}}
+                    </td>
+                </tr>
+            </ng-container>
+          </table> 
+    </ng-container>
+
+    <ng-container *ngIf="countrySelected">
+        
+        <img id="backButton" src="../assets/back-button.svg" alt="Back-Button" (click)="onBackClicked()"/>
+
+
+        <div id="selectedCountry">
+            {{selectedCountry}}
+        </div>
+
+        <table>
+            <tr>
+              <th>Sportler</th>
+              <th>Sportart</th>
+              <th>Ergebnis</th>
+              <th>Medaille</th>
+            </tr>
+
+            <tr *ngFor="let item of selectedScores">
+                <td>{{item.name}}</td>
+                <td>{{item.sportType}}</td>
+                <td>{{item.score}}</td>
+                <td>{{item.medal}}</td>
+            </tr>
+          </table> 
+    </ng-container>
+</div>
